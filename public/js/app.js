@@ -23,7 +23,7 @@ const messageOne = document.querySelector('#message-1');
 const messageTwo = document.querySelector('#message-2');
 
 weatherForm.addEventListener('submit',(e)=>{
-    const baseURL = 'http://localhost:3000/weather?addres=';
+    const baseURL = '/weather?addres=';
     const location = search.value;
 
     e.preventDefault();

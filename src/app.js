@@ -13,6 +13,7 @@ console.log(path.join(__dirname, '../public'));
 //console.log(__filename);
 
 const app = express();
+const port = process.env.PORT || 3000 ; // Exist or else 3000
 
 // Define paths for Express config
 // Serve static page
@@ -149,6 +150,6 @@ app.get('*', (req, res) => {
 });
 
 // Start the sever in port 3000
-app.listen(3000, () => {
-    console.log('Server is up on port 3000');
+app.listen(port, () => {
+    console.log('Server is up on port ' + port);
 });

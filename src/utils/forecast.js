@@ -18,7 +18,7 @@ const request = require('request');
 
 const forecast = (lat, lon, callback) => {
     const url = 'http://api.weatherstack.com/current?access_key=6c67aa24a5df3c21379836515acf90fb&query='
-        + lat + ',' + lon + '&units=f';
+        + lat + ',' + lon;
     request({ url, json: true }, (error, {body} = {}) => {
         if (error) {
             callback('Unable to connect weather service!!!', undefined);
@@ -27,7 +27,7 @@ const forecast = (lat, lon, callback) => {
         } else {
             callback(undefined, body.current.weather_descriptions[0] + '. It is currently ' + body.current.temperature +
                 ' degress out. It feel like ' + body.current.feelslike +
-                ' degrees in.');
+                ' degrees in. The cloud cover is ' + body.current.cloudcover);
         }
     });
 };
